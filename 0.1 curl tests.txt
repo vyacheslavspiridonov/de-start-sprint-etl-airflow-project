@@ -1,0 +1,43 @@
+curl.exe --location --request POST 'https://d5dg1j9kt695d30blp03.apigw.yandexcloud.net/generate_report' --header 'X-Nickname: vyacheslavspiridonov' --header 'X-Cohort: 18' --header 'X-Project: True' --header 'X-API-KEY: 5f55e6c0-e9e5-4a9c-b313-63c01fc31460' --data-raw " "
+
+RETURN {"task_id":"MjAyNi0wOC0xMFQyMDoxMjo1MAl2eWFjaGVzbGF2c3Bpcmlkb25vdg=="}
+
+------------------------------------
+
+curl.exe --location --request GET 'https://d5dg1j9kt695d30blp03.apigw.yandexcloud.net/get_report?task_id=MjAyNi0wOC0xMFQyMDoxMjo1MAl2eWFjaGVzbGF2c3Bpcmlkb25vdg==' --header 'X-Nickname: vyacheslavspiridonov' --header 'X-Cohort: 18' --header 'X-Project: True' --header 'X-API-KEY: 5f55e6c0-e9e5-4a9c-b313-63c01fc31460'
+
+RETURN
+
+{
+ "task_id":"MjAyNi0wOC0xMFQyMDoxMjo1MAl2eWFjaGVzbGF2c3Bpcmlkb25vdg==",
+ "status":"SUCCESS",
+ "data":{"report_id":"TWpBeU5pMHdPQzB4TUZReU1Eb3hNam8xTUFsMmVXRmphR1Z6YkdGMmMzQnBjbWxrYjI1dmRnPT0=",
+	 "start_day":"2026-07-11 00:00:00",
+ 	 "end_date":"2026-08-02 00:00:00",
+	 "s3_path":{
+		"customer_research":"https://storage.yandexcloud.net/s3-sprint3/cohort_18/vyacheslavspiridonov/project/TWpBeU5pMHdPQzB4TUZReU1Eb3hNam8xTUFsMmVXRmphR1Z6YkdGMmMzQnBjbWxrYjI1dmRnPT0=/customer_research.csv",
+		"user_order_log":"https://storage.yandexcloud.net/s3-sprint3/cohort_18/vyacheslavspiridonov/project/TWpBeU5pMHdPQzB4TUZReU1Eb3hNam8xTUFsMmVXRmphR1Z6YkdGMmMzQnBjbWxrYjI1dmRnPT0=/user_order_log.csv",
+		"user_activity_log":"https://storage.yandexcloud.net/s3-sprint3/cohort_18/vyacheslavspiridonov/project/TWpBeU5pMHdPQzB4TUZReU1Eb3hNam8xTUFsMmVXRmphR1Z6YkdGMmMzQnBjbWxrYjI1dmRnPT0=/user_activity_log.csv",
+		"price_log":"https://storage.yandexcloud.net/s3-sprint3/cohort_18/vyacheslavspiridonov/project/TWpBeU5pMHdPQzB4TUZReU1Eb3hNam8xTUFsMmVXRmphR1Z6YkdGMmMzQnBjbWxrYjI1dmRnPT0=/price_log.csv"}
+	}
+}
+
+----------------------------------
+
+curl --location --request GET 'https://d5dg1j9kt695d30blp03.apigw.yandexcloud.net/get_increment?report_id=TWpBeU5pMHdPQzB4TUZReU1Eb3hNam8xTUFsMmVXRmphR1Z6YkdGMmMzQnBjbWxrYjI1dmRnPT0=&date=2026-08-03T00:00:00' --header 'X-Nickname: vyacheslavspiridonov' --header 'X-Cohort: 18' --header 'X-Project: True' --header 'X-API-KEY: 5f55e6c0-e9e5-4a9c-b313-63c01fc31460'
+
+RETURN 
+
+	{
+	"report_id":"TWpBeU5pMHdPQzB4TUZReU1Eb3hNam8xTUFsMmVXRmphR1Z6YkdGMmMzQnBjbWxrYjI1dmRnPT0=",
+	"date":"2026-08-03 00:00:00",
+	"status":"SUCCESS",
+	"data":{
+		"increment_id":"MjAyNi0wOC0wM1QwMDowMDowMAlUV3BCZVU1cE1IZFBRekI0VFVaUmVVMUViM2hOYW04eFRVRnNNbVZYUm1waFIxWjZZa2RHTW1NelFuQmpiV3hyWWpJMWRtUm5QVDA9",
+		"s3_path":{
+			"customer_research_inc":"https://storage.yandexcloud.net/s3-sprint3/cohort_18/vyacheslavspiridonov/project/MjAyNi0wOC0wM1QwMDowMDowMAlUV3BCZVU1cE1IZFBRekI0VFVaUmVVMUViM2hOYW04eFRVRnNNbVZYUm1waFIxWjZZa2RHTW1NelFuQmpiV3hyWWpJMWRtUm5QVDA9/customer_research_inc.csv",
+			"user_order_log_inc":"https://storage.yandexcloud.net/s3-sprint3/cohort_18/vyacheslavspiridonov/project/MjAyNi0wOC0wM1QwMDowMDowMAlUV3BCZVU1cE1IZFBRekI0VFVaUmVVMUViM2hOYW04eFRVRnNNbVZYUm1waFIxWjZZa2RHTW1NelFuQmpiV3hyWWpJMWRtUm5QVDA9/user_order_log_inc.csv",
+			"user_activity_log_inc":"https://storage.yandexcloud.net/s3-sprint3/cohort_18/vyacheslavspiridonov/project/MjAyNi0wOC0wM1QwMDowMDowMAlUV3BCZVU1cE1IZFBRekI0VFVaUmVVMUViM2hOYW04eFRVRnNNbVZYUm1waFIxWjZZa2RHTW1NelFuQmpiV3hyWWpJMWRtUm5QVDA9/user_activity_log_inc.csv",			"price_log_inc":"https://storage.yandexcloud.net/s3-sprint3/cohort_18/vyacheslavspiridonov/project/TWpBeU5pMHdPQzB4TUZReU1Eb3hNam8xTUFsMmVXRmphR1Z6YkdGMmMzQnBjbWxrYjI1dmRnPT0=/price_log_inc.csv"
+			}
+		}
+	}
