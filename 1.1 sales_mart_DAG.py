@@ -10,8 +10,8 @@ from airflow.providers.postgres.operators.postgres import PostgresOperator
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 from airflow.hooks.http_hook import HttpHook
 
+# Настройка соединения
 http_conn_id = HttpHook.get_connection('http_conn_id')
-# ИСПРАВЛЕН ПАРАМЕТР: 'key_id' -> 'api_key'
 api_key = http_conn_id.extra_dejson.get('api_key')
 base_url = http_conn_id.host
 
@@ -27,7 +27,7 @@ headers = {
     'X-API-KEY': api_key
 }
 
-
+# Отправка данных для генерации данных
 def generate_report(ti):
     print('Making request generate_report')
 
@@ -37,7 +37,7 @@ def generate_report(ti):
     ti.xcom_push(key='task_id', value=task_id)
     print(f'Response is {response.content}')
 
-
+# GET-запрос на получение данных
 def get_report(ti):
     print('Making request get_report')
     task_id = ti.xcom_pull(key='task_id')
@@ -61,7 +61,7 @@ def get_report(ti):
     ti.xcom_push(key='report_id', value=report_id)
     print(f'Report_id={report_id}')
 
-
+# Отправка GET-запроса на новые данные
 def get_increment(date, ti):
     print('Making request get_increment')
     report_id = ti.xcom_pull(key='report_id')
@@ -78,7 +78,7 @@ def get_increment(date, ti):
     ti.xcom_push(key='increment_id', value=increment_id)
     print(f'increment_id={increment_id}')
 
-
+# Загрузка данных в Staging-слой
 def upload_data_to_staging(filename, date, pg_table, pg_schema, ti):
     increment_id = ti.xcom_pull(key='increment_id')
     s3_filename = f'https://storage.yandexcloud.net/s3-sprint3/cohort_{cohort}/{nickname}/project/{increment_id}/{filename}'
