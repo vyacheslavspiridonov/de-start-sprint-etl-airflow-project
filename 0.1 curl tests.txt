@@ -1,4 +1,4 @@
-curl.exe --location --request POST 'https://d5dg1j9kt695d30blp03.apigw.yandexcloud.net/generate_report' --header 'X-Nickname: vyacheslavspiridonov' --header 'X-Cohort: 18' --header 'X-Project: True' --header 'X-API-KEY: 5f55e6c0-e9e5-4a9c-b313-63c01fc31460' --data-raw " "
+curl.exe --location --request POST 'https://d5dg1j9kt695d30blp03.apigw.yandexcloud.net/generate_report' --header 'X-Nickname: vyacheslavspiridonov' --header 'X-Cohort: 18' --header 'X-Project: True' --header 'X-API-KEY: ********-****-****-****-************' --data-raw " "
 
 RETURN {"task_id":"MjAyNi0wOC0xMFQyMDoxMjo1MAl2eWFjaGVzbGF2c3Bpcmlkb25vdg=="}
 
